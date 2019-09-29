@@ -1,0 +1,21 @@
+type: lib
+description: I2C button driver for the WEMOS OLED shield
+version: 1.0.0
+
+sources:
+  - src
+
+includes:
+  - include
+
+libs:
+  - origin: https://github.com/mongoose-os-libs/i2c
+
+config_schema:
+  - ["lolin_button", "o", {"title": "LoLin I2C buttont sensor settings"}]
+  - ["lolin_button.enable", "b", true, {"title": "Enable the buttont"}]
+  - ["lolin_button.i2c_bus", "i", 0, {"title": "I2C bus number"}]
+  - ["lolin_button.i2c_addr", "i", 0x31, {"title": "I2C device address, 0x31 is the default"}]
+  - ["lolin_button.poll_interval_ms", "i", 100, {"title": "Poll interval for the button"}]
+
+manifest_version: 2017-06-29

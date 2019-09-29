@@ -63,8 +63,6 @@ static void report_change(enum mgos_lolin_button_event ev,
 }
 
 static void mgos_lolin_button_timer_cb(void *arg) {
-  static int i = 0;
-  LOG(LL_INFO, ("%d", i++));
   struct mgos_lolin_button_ctx *ctx = (struct mgos_lolin_button_ctx *) arg;
   int r = mgos_i2c_read_reg_b(ctx->bus, ctx->i2c_addr, GET_KEY_VALUE);
   if (r < 0) return;

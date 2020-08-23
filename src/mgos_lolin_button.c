@@ -88,6 +88,7 @@ bool mgos_lolin_button_init_cfg(const struct mgos_config_lolin_button *cfg) {
   if (r < 0) {
     LOG(LL_ERROR,
         ("LOLIN button %d/%#x failed: %d", cfg->i2c_bus, cfg->i2c_addr, r));
+    return true;
   }
   struct mgos_lolin_button_ctx *ctx =
       (struct mgos_lolin_button_ctx *) calloc(1, sizeof(*ctx));

@@ -9,7 +9,7 @@ includes:
   - include
 
 libs:
-  - origin: https://github.com/mongoose-os-libs/i2c
+  - location: https://github.com/mongoose-os-libs/i2c
 
 config_schema:
   - ["lolin_button", "o", {"title": "LoLin I2C buttont sensor settings"}]
